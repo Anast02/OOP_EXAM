@@ -8,6 +8,5 @@ def user_check():
 
     if login != 'Papa' or password != '1':
         print("Такой пользователь не найден, используйте другие данные для входа в магазин.")
-        breakpoint()
     else:
         print("Добро пожаловать в магазин!")
