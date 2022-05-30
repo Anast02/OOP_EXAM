@@ -4,7 +4,3 @@ class Goods():
         self.goodsPrice = goodsPrice  # Цена товара
         self.goodsRate = goodsRate    # Рейтинг товара
 
-        with open('goods.txt', 'r', encoding='utf-8') as file:
-            print(file.read())
-
-
