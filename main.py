@@ -8,26 +8,11 @@ from utils.goods import Goods
 user_check()
 
 """
-Выборк категории товара
+Выбор категории товара
 """
 Category.choose_category()
 
-"""
-Выбор товара из категории
-"""
 
-i = 1
-items = {}
-with open('goods.txt', 'r', encoding='utf-8') as file:
-    for line in file:
-        a = line.split(",")
-        if line.split(",")[0] == Category.:
-            items_str = Goods(line.split(",")[1], line.split(",")[2], line.split(",")[3])
-            items[i] = items_str.goodsName, items_str.goodsPrice, items_str.goodsRate
-            print(i, 'Название товара: ', items_str.goodsName, ' ', 'Цена товара: ', items_str.goodsPrice, ' ', 'Рейтинг товара: ', items_str.goodsRate)
-            i += 1
-
-item = input('Выберите товар из категории: ')
 
 
 
