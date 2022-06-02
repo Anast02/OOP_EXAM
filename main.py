@@ -1,5 +1,3 @@
-import re
-from busket import Basket
 from utils.goods import Goods
 from utils.usercheck import user_check
 from utils.category import Category
@@ -57,24 +55,7 @@ if choosen_goods not in product_dict:
     print('Такого товара нет в нашем ассортименте :(' )
     choosen_goods = int(input("Выберите другой товар из списка: "))
 
-print('В корзине находится товар', choosen_goods)
-
 """
-Вывод инфо о составе корзины
+Вывод инфо о корзине
 """
-basket_list = {}  # словарь будет использоваться для подсчета количества и суммы товара в корзине
-j = 1  # ключ словаря totalBasketList
-if choosen_goods in product_dict:
-    basket1 = Basket(product_dict[choosen_goods])
-    basket2 = re.sub("[(|'|)]", "", basket1.productName)
-    print('В корзину добавлен товар: ', basket2)
-    basket3 = int(basket2.rpartition(' ')[-1])
-    basket_list[j] = basket3  # Запись данных о добавленном товаре
-
-    #ch = input('Продолжить покупки (y/n)? ').lower()  # выбор продолжения (завершения) покупки без учета регистра введенного символа
-    #j += 1
-   #"""
-    #Вывод итоговых данных о количестве товара и сумме покупки
-    #"""
-    #if ch == 'n':
-Basket.sum_basket(basket_list)
+print('В корзине находится товар под номером', choosen_goods, 'на сумму', product_srt.goodsPrice, 'руб.')
