@@ -1,11 +1,17 @@
-from utils.goods import Goods
-from utils.usercheck import user_check
-from utils.category import Category
+import re
+
+from usercheck import user_check
+from category import Category
+from goods import Goods
+from basket import Basket
 
 """
 Проверка логина и пароля пользователя
 """
 user_check()
+
+total_basket = {}
+j = 1
 
 """
 Выбор категории товара
@@ -54,8 +60,31 @@ choosen_goods = int(input("Укажите номер товара, добавл�
 if choosen_goods not in product_dict:
     print('Такого товара нет в нашем ассортименте :(' )
     choosen_goods = int(input("Выберите другой товар из списка: "))
+else:
+    basket_1 = Basket(product_dict[choosen_goods])
+    # basket_2 = re.sub("[(|'|)]", " ", str(basket_1.item_name))
+    basket_2 = re.sub("[(|')]", "", str(basket_1.item_name))
+    print('В корзину добавлен товар', basket_2)
+    basket_3 = int(basket_2.rpartition(' ')[-1])
+    total_basket[j] = basket_3
 
-"""
-Вывод инфо о корзине
-"""
-print('В корзине находится товар под номером', choosen_goods, 'на сумму', product_srt.goodsPrice, 'руб.')
+# re.su
+
+# """
+# Вывод инфо о корзине
+# """
+#
+#  if choosen_goods in product_dict:
+
+
+Basket.sum_basket(total_basket)
+
+
+# """
+# Вывод инфо о корзине
+# """
+#
+#
+# if
+#
+# print('В корзине находится товар под номером', choosen_goods, 'на сумму', product_srt.goodsPrice, 'руб.')

@@ -1,10 +1,8 @@
-from busket import Basket
-
 class User:
     def __init__(self, login: str, password: str):
         self.__login = login
         self.__password = password
-        self.__basket = Basket()
+
 """
 Проверка логина и пароля пользователя
 """
