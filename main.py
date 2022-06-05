@@ -45,7 +45,7 @@ with open("goods.txt", encoding="utf-8") as file:
         if line.split(",")[0] == categ_name.get_category_name():
             product_srt = Goods(line.split(",")[1], line.split(",")[2], line.split(",")[3])
             product_dict[i] = product_srt.goodsName, product_srt.goodsPrice, product_srt.goodsRate
-            print(i, 'Товар:', product_srt.goodsName, '; Цена товара: ', product_srt.goodsPrice, '; Рейтинг товара: ', product_srt.goodsRate)
+            print(i, 'Товар:', product_srt.goodsName, '; Цена товара: ', product_srt.goodsPrice, '; Рейтинг: ', product_srt.goodsRate)
             i += 1  # подсчет количества строк
 
 """
@@ -63,7 +63,9 @@ if choosen_goods not in product_dict:
 else:
     basket_1 = Basket(product_dict[choosen_goods])
     # basket_2 = re.sub("[(|'|)]", " ", str(basket_1.item_name))
-    basket_2 = re.sub("[(|')]", "", str(basket_1.item_name))
+    basket_2 = re.sub('[(|\')]', "", str(basket_1.item_name))
+    # basket_2 = str.split(basket_1, ',')
+    # basket_2 = str(basket_1.item_name)
     print('В корзину добавлен товар', basket_2)
     basket_3 = int(basket_2.rpartition(' ')[-1])
     total_basket[j] = basket_3
